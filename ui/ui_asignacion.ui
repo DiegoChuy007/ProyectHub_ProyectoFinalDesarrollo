@@ -1,0 +1,1076 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1092</width>
+    <height>586</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">/*
+ * Archivo de Estilo QSS - Tema Oscuro (Dark Mode)
+ * Basado en la conversión de la paleta clara a oscura.
+ */
+
+/* === Estilo general === */
+QMainWindow {
+    /* Fondo principal oscuro */
+    background-color: #1E1E1E;
+    /* Color de texto claro */
+    color: #F0F0F0;
+    font-family: &quot;Segoe UI Variable&quot;, &quot;Roboto&quot;, &quot;Open Sans&quot;, sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+/* === Frames === */
+QFrame {
+    /* Fondo de frames de contenido oscuro */
+    background-color: #2D2D2D;
+    border-radius: 10px;
+    /* Borde sutil en modo oscuro */
+    border: 1px solid #444444;
+}
+
+/* Barra superior */
+#frame_superior {
+    /* Color ligeramente más oscuro que el fondo de frames */
+    background-color: #252525;
+    border: none;
+}
+
+/* Panel lateral */
+#frame_lateral {
+    /* Color para el panel lateral, más distinguible */
+    background-color: #383838;
+    border-right: 1px solid #444444; 
+}
+
+/* Área principal */
+#frame_paginas {
+    background-color: #2D2D2D;
+}
+
+/* === Botones Genéricos === */
+QPushButton {
+    /* Fondo de botón gris oscuro neutro */
+    background-color: #444444;
+    color: #F0F0F0;
+    border: 1px solid #555555;
+    border-radius: 6px;
+    padding: 8px 14px;
+    font-weight: 400;
+    font-size: 15px;
+    letter-spacing: 0.3px;
+}
+
+QPushButton:hover {
+    /* Azul claro original para énfasis */
+    background-color: #0078d7;
+    color: #ffffff;
+    border: 1px solid #0078d7;
+}
+
+QPushButton:pressed {
+    /* Azul más oscuro para estado presionado */
+    background-color: #005a9e;
+    color: #ffffff;
+    border: 1px solid #005a9e;
+}
+
+/* Botón principal (Menú) */
+#boton_menu {
+    background-color: #0078d7;
+    color: white;
+    border: none;
+    font-weight: 400;
+}
+#boton_menu:hover {
+    background-color: #006cbe;
+}
+#boton_menu:pressed {
+    background-color: #005a9e;
+}
+
+/* Botón salir */
+#boton_salir {
+    /* Rojo de error/salir */
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+}
+#boton_salir:hover {
+    background-color: #c0392b;
+}
+#boton_salir:pressed {
+    background-color: #a93226;
+}
+
+/* === Campos de texto === */
+QLineEdit {
+    /* Fondo oscuro para la entrada de texto */
+    background-color: #383838;
+    color: #F0F0F0;
+    border: 1px solid #555555;
+    border-radius: 4px;
+    padding: 6px 8px;
+    font-size: 15px;
+    font-weight: 300;
+}
+
+QLineEdit:focus {
+    /* Borde de enfoque con el azul claro primario */
+    border: 1px solid #0078d7;
+    background-color: #3D4A5B; /* Fondo sutil al enfocar */
+}
+
+/* === Labels === */
+QLabel {
+    /* Texto claro */
+    color: #F0F0F0;
+    font-weight: 300;
+    font-size: 15px;
+}
+
+/* Label inferior o secundario */
+#label {
+    /* Texto gris claro para secundario */
+    color: #A0A0A0;
+    font-size: 13px;
+    font-style: italic;
+}
+
+/* === Stacked Widget === */
+QStackedWidget {
+    background-color: #2D2D2D;
+    border: 1px solid #444444;
+    border-radius: 6px;
+}
+
+/* === Scrollbars === */
+QScrollBar:vertical {
+    border: none;
+    background: #383838; /* Fondo oscuro para el scrollbar */
+    width: 10px;
+    border-radius: 4px;
+}
+QScrollBar::handle:vertical {
+    background: #555555; /* Handle gris oscuro */
+    min-height: 20px;
+    border-radius: 4px;
+}
+QScrollBar::handle:vertical:hover {
+    /* Handle hover azul claro */
+    background: #0078d7;
+}
+QScrollBar::add-line:vertical,
+QScrollBar::sub-line:vertical {
+    height: 0;
+}
+
+/* === Layouts === */
+QVBoxLayout, QHBoxLayout {
+    spacing: 10px;
+}
+
+/* === Botones laterales (Navegación) === */
+#boton_agregar, #boton_buscar, #boton_actualizar, #boton_eliminar, #boton_consultar {
+    /* Fondo y borde para botones laterales inactivos */
+    background-color: #383838; /* Fondo igual al panel lateral */
+    border: 1px solid #555555;
+    color: #F0F0F0;
+    font-weight: 400;
+    font-size: 15px;
+}
+
+#boton_agregar:hover, 
+#boton_buscar:hover, 
+#boton_actualizar:hover, 
+#boton_eliminar:hover,
+#boton_consultar:hover {
+    /* Fondo de hover ligeramente más claro */
+    background-color: #4C4C4C; 
+    border: 1px solid #4C4C4C;
+    color: #ffffff;
+}
+
+#boton_agregar:pressed, 
+#boton_buscar:pressed, 
+#boton_actualizar:pressed, 
+#boton_eliminar:pressed ,
+#boton_consultar:pressed{
+    /* Color de pressed */
+    background-color: #5D5D5D;
+}
+
+/* === Tooltips === */
+QToolTip {
+    background-color: #383838;
+    color: #F0F0F0;
+    /* Borde con el azul claro primario */
+    border: 1px solid #0078d7;
+    padding: 6px;
+    border-radius: 4px;
+    font-size: 14px;
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout" stretch="1,0">
+    <item>
+     <widget class="QFrame" name="frame_superior">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>50</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>50</height>
+       </size>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QPushButton" name="boton_menu">
+         <property name="minimumSize">
+          <size>
+           <width>200</width>
+           <height>35</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Menú</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../../crudapp/resources/imagenes/boton_menu.png</normaloff>../../crudapp/resources/imagenes/boton_menu.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>32</width>
+           <height>32</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>145</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QLabel" name="label">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>144</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPushButton" name="boton_salir">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>35</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Salir</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../../crudapp/resources/imagenes/salir.png</normaloff>../../crudapp/resources/imagenes/salir.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>32</width>
+           <height>32</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QFrame" name="frame_central">
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QFrame" name="frame_lateral">
+         <property name="minimumSize">
+          <size>
+           <width>200</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>0</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <item>
+           <widget class="QPushButton" name="boton_agregar">
+            <property name="text">
+             <string>Nuevo</string>
+            </property>
+            <property name="icon">
+             <iconset>
+              <normaloff>../../crudapp/resources/imagenes/boton_agregar.png</normaloff>../../crudapp/resources/imagenes/boton_agregar.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>32</width>
+              <height>32</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="boton_actualizar">
+            <property name="text">
+             <string>Actualizar</string>
+            </property>
+            <property name="icon">
+             <iconset>
+              <normaloff>../../crudapp/resources/imagenes/boton_modificar.png</normaloff>../../crudapp/resources/imagenes/boton_modificar.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>32</width>
+              <height>32</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="boton_eliminar">
+            <property name="text">
+             <string>Eliminar</string>
+            </property>
+            <property name="icon">
+             <iconset>
+              <normaloff>../../crudapp/resources/imagenes/boton_eliminar.png</normaloff>../../crudapp/resources/imagenes/boton_eliminar.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>32</width>
+              <height>32</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="boton_buscar">
+            <property name="text">
+             <string>Buscar</string>
+            </property>
+            <property name="icon">
+             <iconset>
+              <normaloff>../../crudapp/resources/imagenes/BUSCAR.png</normaloff>../../crudapp/resources/imagenes/BUSCAR.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>32</width>
+              <height>32</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="boton_consultar">
+            <property name="text">
+             <string>Consultar</string>
+            </property>
+            <property name="icon">
+             <iconset>
+              <normaloff>../../crudapp/resources/imagenes/boton_consultar.png</normaloff>../../crudapp/resources/imagenes/boton_consultar.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>32</width>
+              <height>32</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="verticalSpacer">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>177</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_mensaje">
+            <property name="text">
+             <string>Derechos reservados 2025</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QFrame" name="frame_paginas">
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_3">
+          <item>
+           <widget class="QStackedWidget" name="stackedWidget">
+            <property name="currentIndex">
+             <number>3</number>
+            </property>
+            <widget class="QWidget" name="page_agregar">
+             <layout class="QVBoxLayout" name="verticalLayout_6">
+              <item>
+               <layout class="QVBoxLayout" name="verticalLayout_4">
+                <item>
+                 <layout class="QGridLayout" name="gridLayout">
+                  <item row="1" column="0">
+                   <widget class="QLabel" name="label_3">
+                    <property name="text">
+                     <string>ID proyecto</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="1">
+                   <widget class="QLineEdit" name="idasignacion_agregar">
+                    <property name="minimumSize">
+                     <size>
+                      <width>150</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>150</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="0">
+                   <widget class="QLabel" name="label_2">
+                    <property name="minimumSize">
+                     <size>
+                      <width>0</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>100</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string>ID asignación</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="1">
+                   <widget class="QLineEdit" name="idproyecto_agregar">
+                    <property name="maximumSize">
+                     <size>
+                      <width>150</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="1">
+                   <widget class="QLineEdit" name="idempleado_agregar">
+                    <property name="maximumSize">
+                     <size>
+                      <width>150</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="0">
+                   <widget class="QLabel" name="label_4">
+                    <property name="text">
+                     <string>ID empleado</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="accion_guardar">
+                  <property name="text">
+                   <string>Guardar</string>
+                  </property>
+                  <property name="icon">
+                   <iconset>
+                    <normaloff>../../crudapp/resources/imagenes/guardar.png</normaloff>../../crudapp/resources/imagenes/guardar.png</iconset>
+                  </property>
+                  <property name="iconSize">
+                   <size>
+                    <width>32</width>
+                    <height>32</height>
+                   </size>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="page_actualizar">
+             <layout class="QVBoxLayout" name="verticalLayout_5">
+              <item>
+               <layout class="QGridLayout" name="gridLayout_2">
+                <item row="1" column="1">
+                 <widget class="QLineEdit" name="idproyecto_actualizar">
+                  <property name="maximumSize">
+                   <size>
+                    <width>150</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="1">
+                 <widget class="QLineEdit" name="idasignacion_actualizar">
+                  <property name="minimumSize">
+                   <size>
+                    <width>150</width>
+                    <height>0</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>150</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="0">
+                 <widget class="QLabel" name="label_7">
+                  <property name="text">
+                   <string>ID proyecto</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="0">
+                 <widget class="QLabel" name="label_8">
+                  <property name="text">
+                   <string>ID empleado</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="0">
+                 <widget class="QLabel" name="label_6">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>0</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>100</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                  <property name="text">
+                   <string>ID asignación</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="2">
+                 <widget class="QPushButton" name="buscar_actualizar">
+                  <property name="maximumSize">
+                   <size>
+                    <width>150</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="icon">
+                   <iconset>
+                    <normaloff>../../crudapp/resources/imagenes/BUSCAR.png</normaloff>../../crudapp/resources/imagenes/BUSCAR.png</iconset>
+                  </property>
+                  <property name="iconSize">
+                   <size>
+                    <width>32</width>
+                    <height>32</height>
+                   </size>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="1">
+                 <widget class="QLineEdit" name="idempleado_actualizar">
+                  <property name="maximumSize">
+                   <size>
+                    <width>150</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <widget class="QPushButton" name="accion_actualizar">
+                <property name="text">
+                 <string>Actualizar</string>
+                </property>
+                <property name="icon">
+                 <iconset>
+                  <normaloff>../../crudapp/resources/imagenes/boton_modificar.png</normaloff>../../crudapp/resources/imagenes/boton_modificar.png</iconset>
+                </property>
+                <property name="iconSize">
+                 <size>
+                  <width>32</width>
+                  <height>32</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="page_eliminar">
+             <layout class="QVBoxLayout" name="verticalLayout_7">
+              <item>
+               <layout class="QGridLayout" name="gridLayout_4">
+                <item row="2" column="0">
+                 <widget class="QLabel" name="label_14">
+                  <property name="text">
+                   <string>ID empleado</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="0">
+                 <widget class="QLabel" name="label_15">
+                  <property name="text">
+                   <string>ID proyecto</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="1">
+                 <widget class="QLineEdit" name="idproyecto_eliminar">
+                  <property name="maximumSize">
+                   <size>
+                    <width>150</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="1">
+                 <widget class="QLineEdit" name="idempleado_eliminar">
+                  <property name="maximumSize">
+                   <size>
+                    <width>150</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="2">
+                 <widget class="QPushButton" name="buscar_eliminar">
+                  <property name="maximumSize">
+                   <size>
+                    <width>150</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="icon">
+                   <iconset>
+                    <normaloff>../../crudapp/resources/imagenes/BUSCAR.png</normaloff>../../crudapp/resources/imagenes/BUSCAR.png</iconset>
+                  </property>
+                  <property name="iconSize">
+                   <size>
+                    <width>32</width>
+                    <height>32</height>
+                   </size>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="1">
+                 <widget class="QLineEdit" name="idasignacion_eliminar">
+                  <property name="minimumSize">
+                   <size>
+                    <width>150</width>
+                    <height>0</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>150</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="0">
+                 <widget class="QLabel" name="label_17">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>0</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>100</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                  <property name="text">
+                   <string>ID asignación</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <widget class="QPushButton" name="accion_eliminar">
+                <property name="text">
+                 <string>Eliminar</string>
+                </property>
+                <property name="icon">
+                 <iconset>
+                  <normaloff>../../crudapp/resources/imagenes/boton_eliminar.png</normaloff>../../crudapp/resources/imagenes/boton_eliminar.png</iconset>
+                </property>
+                <property name="iconSize">
+                 <size>
+                  <width>32</width>
+                  <height>32</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="page_buscar">
+             <layout class="QVBoxLayout" name="verticalLayout_8">
+              <item>
+               <layout class="QGridLayout" name="gridLayout_3">
+                <item row="1" column="0">
+                 <widget class="QLabel" name="label_11">
+                  <property name="text">
+                   <string>ID proyecto</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="1">
+                 <widget class="QLineEdit" name="idproyecto_buscar">
+                  <property name="maximumSize">
+                   <size>
+                    <width>150</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="0">
+                 <widget class="QLabel" name="label_10">
+                  <property name="text">
+                   <string>ID empleado</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="1">
+                 <widget class="QLineEdit" name="idempleado_buscar">
+                  <property name="maximumSize">
+                   <size>
+                    <width>150</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="1">
+                 <widget class="QLineEdit" name="idasignacion_buscar">
+                  <property name="minimumSize">
+                   <size>
+                    <width>150</width>
+                    <height>0</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>150</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="0">
+                 <widget class="QLabel" name="label_13">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>0</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>100</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                  <property name="text">
+                   <string>ID asignación</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="2">
+                 <widget class="QPushButton" name="buscar_buscar">
+                  <property name="maximumSize">
+                   <size>
+                    <width>150</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="icon">
+                   <iconset>
+                    <normaloff>../../crudapp/resources/imagenes/BUSCAR.png</normaloff>../../crudapp/resources/imagenes/BUSCAR.png</iconset>
+                  </property>
+                  <property name="iconSize">
+                   <size>
+                    <width>32</width>
+                    <height>32</height>
+                   </size>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <widget class="QPushButton" name="accion_limpiar">
+                <property name="text">
+                 <string>Limpiar</string>
+                </property>
+                <property name="icon">
+                 <iconset>
+                  <normaloff>../../crudapp/resources/imagenes/limpiar.png</normaloff>../../crudapp/resources/imagenes/limpiar.png</iconset>
+                </property>
+                <property name="iconSize">
+                 <size>
+                  <width>32</width>
+                  <height>32</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="page_consultar">
+             <layout class="QVBoxLayout" name="verticalLayout_9">
+              <item>
+               <widget class="QPushButton" name="refresh">
+                <property name="text">
+                 <string>Refresh</string>
+                </property>
+                <property name="icon">
+                 <iconset>
+                  <normaloff>../../crudapp/resources/imagenes/boton_refrescar.png</normaloff>../../crudapp/resources/imagenes/boton_refrescar.png</iconset>
+                </property>
+                <property name="iconSize">
+                 <size>
+                  <width>32</width>
+                  <height>32</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QTableWidget" name="tabla_consulta">
+                <property name="styleSheet">
+                 <string notr="true">/* === Tablas === */
+QTableWidget {
+    background-color: #ffffff;
+    color: #333333;
+    gridline-color: #e0e0e0;
+    border: 1px solid #dcdcdc;
+    border-radius: 6px;
+    font-family: &quot;Segoe UI Variable&quot;, &quot;Roboto&quot;, &quot;Open Sans&quot;, sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    selection-background-color: #e8f0fe; /* azul claro al seleccionar */
+    selection-color: #0078d7;
+    alternate-background-color: #f9fafc; /* filas alternadas */
+}
+
+/* Cabecera horizontal */
+QHeaderView::section {
+    background-color: #f1f3f6;
+    color: #333333;
+    border: 1px solid #dcdcdc;
+    border-radius: 4px;
+    font-weight: 400;
+    font-size: 15px;
+    padding: 8px;
+}
+
+/* Cabecera horizontal al pasar el cursor */
+QHeaderView::section:hover {
+    background-color: #e8ecf1;
+}
+
+/* Celdas */
+QTableWidget::item {
+    padding: 6px;
+    border: none;
+}
+
+/* Celda seleccionada */
+QTableWidget::item:selected {
+    background-color: #e8f0fe;
+    color: #0078d7;
+}
+
+/* Bordes del header alineados al contenido */
+QHeaderView {
+    border: none;
+}
+
+/* Barra de desplazamiento dentro de la tabla */
+QTableCornerButton::section {
+    background-color: #f1f3f6;
+    border: 1px solid #dcdcdc;
+}
+
+/* Scrollbars coherentes dentro de tablas */
+QTableWidget QScrollBar:vertical {
+    border: none;
+    background: #f0f0f0;
+    width: 10px;
+    border-radius: 4px;
+}
+QTableWidget QScrollBar::handle:vertical {
+    background: #cccccc;
+    min-height: 20px;
+    border-radius: 4px;
+}
+QTableWidget QScrollBar::handle:vertical:hover {
+    background: #0078d7;
+}
+QTableWidget QScrollBar::add-line:vertical,
+QTableWidget QScrollBar::sub-line:vertical {
+    height: 0;
+}</string>
+                </property>
+                <column>
+                 <property name="text">
+                  <string>ID asignación</string>
+                 </property>
+                </column>
+                <column>
+                 <property name="text">
+                  <string>ID proyecto</string>
+                 </property>
+                </column>
+                <column>
+                 <property name="text">
+                  <string>ID empleado</string>
+                 </property>
+                </column>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

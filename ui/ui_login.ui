@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>759</width>
+    <height>373</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QMainWindow {
+    /* Fondo principal: Gris muy claro o blanco suave */
+    background-color: #f6f7fb;
+    color: #333333;
+    font-family: &quot;Segoe UI Variable&quot;, &quot;Roboto&quot;, &quot;Open Sans&quot;, sans-serif;
+    font-size: 15px;
+}
+
+/* Contenedor central (donde está el formulario) */
+#centralwidget {
+    /* Le damos un fondo blanco y un borde para que se vea como un panel */
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: 1px solid #dcdcdc;
+    margin: 20px; /* Separación del borde de la ventana */
+    padding: 20px;
+}
+
+/* Labels (Etiquetas) */
+QLabel {
+    color: #333333;
+    font-weight: 400; /* Un poco más de peso para destacar */
+    font-size: 16px;
+}
+
+/* Campos de texto (QLineEdit) */
+QLineEdit {
+    background-color: #ffffff;
+    color: #333333;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    padding: 8px 10px;
+    font-size: 15px;
+}
+
+QLineEdit:focus {
+    /* Azul de enfoque */
+    border: 1px solid #0078d7; 
+    background-color: #f9fcff;
+}
+
+/* Botón de Ingresar */
+QPushButton {
+    /* Color de acción principal (Azul) */
+    background-color: #0078d7; 
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 20px;
+    font-weight: 500; /* Más robusto */
+    font-size: 16px;
+    letter-spacing: 0.5px;
+}
+
+QPushButton:hover {
+    background-color: #006cbe;
+}
+
+QPushButton:pressed {
+    background-color: #005a9e;
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="spacing">
+     <number>5</number>
+    </property>
+    <property name="sizeConstraint">
+     <enum>QLayout::SetDefaultConstraint</enum>
+    </property>
+    <property name="leftMargin">
+     <number>40</number>
+    </property>
+    <property name="topMargin">
+     <number>40</number>
+    </property>
+    <property name="rightMargin">
+     <number>40</number>
+    </property>
+    <property name="bottomMargin">
+     <number>40</number>
+    </property>
+    <item>
+     <widget class="QLabel" name="lbl_usuario">
+      <property name="text">
+       <string>Usuario</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="txt_usuario"/>
+    </item>
+    <item>
+     <spacer name="verticalSpacer">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item>
+     <widget class="QLabel" name="lbl_contrasena">
+      <property name="text">
+       <string>Contraseña</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="txt_contrasena">
+      <property name="echoMode">
+       <enum>QLineEdit::Password</enum>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <spacer name="verticalSpacer_2">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item>
+     <widget class="QPushButton" name="btn_ingresar">
+      <property name="text">
+       <string>Ingresar</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>759</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
